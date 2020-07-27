@@ -9,24 +9,24 @@ g = {θ, x, y, w, h}
 </font>
 </p>
 具体的示意图可参考：
-<div align=center>
-<img width = '500' height = '300' src = "https://github.com/missFuture/zte-com2020/blob/master/images/%E4%BA%94%E5%8F%82%E6%95%B0%E6%B3%95%E8%A1%A8%E5%BE%81.png"/>
-</div>
+<p align="center">
+<img width = '500' height = '300' src = "https://github.com/missFuture/ztecom2020/blob/master/images/%E4%BA%94%E5%8F%82%E6%95%B0%E6%B3%95%E8%A1%A8%E5%BE%81.png"/>
+</p>
 
 ## 数据集概述
 抓取检测唯一公开的是2011年康奈尔大学提出的Cornell Grasping Dataset。该数据集包含240中物品，885张图片，每一个样本中标注了若干有效抓取框和无效抓取框。部分样本可见下图：
-<div align=center>
+<p align="center">
 <img width = '561' height = '540' src = "https://github.com/missFuture/zte-com2020/blob/master/images/CGD_sample.png"/>
-</div>
+</p>
 
 ## 数据集预处理
 ### 数据增强
 由于数据集较为匮乏，为了防止过拟合， 需要对数据集进行数据增强。主要是对原始图像进行旋转，平移，裁剪，像素级变换等处理，每一个样本经过增强后大致能得到100个样本。
 ### 角度变换
 如果沿用直接回归五参数的方法，模型的泛化性能收到很大影响。同时，考虑到抓取检测模型对角度的要求并非十分苛刻，角度相差一点还可以正常进行抓取，然后对于位置信息却不行，所以对角度信息做了分类处理。
-<div align=center>
-<img width = '900' height = '300' src = "https://github.com/missFuture/zte-com2020/blob/master/images/%E8%A7%92%E5%BA%A6%E5%88%86%E7%B1%BB%E5%A4%84%E7%90%86.png"/>
-</div>
+<p align="center">
+<img width = '900' height = '300' src = "https://github.com/missFuture/ztecom2020/blob/master/images/%E8%A7%92%E5%BA%A6%E5%88%86%E7%B1%BB%E5%A4%84%E7%90%86.png"/>
+</p>
 
 ## 抓取检测模型
 采用一种轻量型目标识别网络[SqueezeNet](https://arxiv.org/abs/1602.07360).该网络的特点在于：采用模块化的设计思想，模块有Squeeze层和Expand层，极大的减少参数了。设计原则如下：
@@ -34,3 +34,6 @@ g = {θ, x, y, w, h}
 2.减少输入通道数量：这一部分使用squeeze layers来实现 
 3.将欠采样操作延后，可以给卷积层提供更大的激活图：更大的激活图保留了更多的信息，可以提供更高的分类准确率
 抓取模型如图所示：
+<p align="center">
+<img width = '463' height = '395' src = "https://github.com/missFuture/zte-com2020/blob/master/images/squeezenet.png"/>
+</p>
