@@ -10,7 +10,7 @@ g = {θ, x, y, w, h}
 </p>
 具体的示意图可参考：
 <p align="center">
-<img width = '500' height = '300' src = "https://github.com/missFuture/ztecom2020/blob/master/images/%E4%BA%94%E5%8F%82%E6%95%B0%E6%B3%95%E8%A1%A8%E5%BE%81.png"/>
+<img width = '500' height = '300' src = "https://github.com/missFuture/zte-com2020/blob/master/images/five_para.png"/>
 </p>
 
 ## 数据集概述
@@ -25,7 +25,7 @@ g = {θ, x, y, w, h}
 ### 角度变换
 如果沿用直接回归五参数的方法，模型的泛化性能收到很大影响。同时，考虑到抓取检测模型对角度的要求并非十分苛刻，角度相差一点还可以正常进行抓取，然后对于位置信息却不行，所以对角度信息做了分类处理。
 <p align="center">
-<img width = '900' height = '300' src = "https://github.com/missFuture/ztecom2020/blob/master/images/%E8%A7%92%E5%BA%A6%E5%88%86%E7%B1%BB%E5%A4%84%E7%90%86.png"/>
+<img width = '900' height = '300' src = "https://github.com/missFuture/zte-com2020/blob/master/images/degree_cls.png"/>
 </p>
 
 ## 抓取检测模型
