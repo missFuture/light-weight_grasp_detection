@@ -33,9 +33,14 @@ g = {θ, x, y, w, h}
 - 1.使用1∗11∗1卷积代替3∗33∗3 卷积：参数减少为原来的1/9 
 - 2.减少输入通道数量：这一部分使用squeeze layers来实现 
 - 3.将欠采样操作延后，可以给卷积层提供更大的激活图：更大的激活图保留了更多的信息，可以提供更高的分类准确率
-抓取模型如图所示：
+<br/>抓取模型如图所示：</br>
 <p align="center">
-<img width = '351' height = '300' src = "https://github.com/missFuture/zte-com2020/blob/master/images/squeezenet.png"/>
+<img width = '468' height = '400' src = "https://github.com/missFuture/zte-com2020/blob/master/images/squeezenet.png"/>
 </p>
 
-## 
+## 抓取检测结果
+在CGD上面进行测试，得到最后的平均准确率是90%， 速度超过50帧（GTX Titanx）。部分测试结果如图所示（**左侧：正确，右侧：错误**）。
+<p align="center">
+<img width = '1000' height = '500' src = "https://github.com/missFuture/zte-com2020/blob/master/images/single_object_result.png"/>
+</p>
+
